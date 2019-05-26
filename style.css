@@ -29,22 +29,25 @@ html, body {
 .upper, .bottom {
   position: absolute;
   width: 100%;
-  height: 50%;
+  height: 50vh;
+  opacity: 0;
+  animation: appear-text 0.0001s linear forwards;
+  -webkit-animation: appear-text 0.0001s linear forwards;
+  -moz-animation: appear-text 0.0001s linear forwards;
 }
 
 .upper {
 background-color: #e5dcc5;
-color: #fff;
+color: #000;
+animation-delay: 3s;
 }
 
 .bottom {
-  position: absolute;
   top: 50%;
-  height: 50vh;
-  width: 100%;
   background: url(cover.jpg) no-repeat 50% 50%;
   background-size: cover;
-  color: #fff;
+  color: #000;
+  animation-delay: 4.2s;
 }
 
 
@@ -104,10 +107,10 @@ color: #fff;
   background: url(album.jpg) no-repeat 50% 50%;
   background-size: cover;
   opacity: 0;
-animation: appear-text 0.0001s linear forwards;
--webkit-animation: appear-text 0.0001s linear forwards;
--moz-animation: appear-text 0.0001s linear forwards;
-animation-delay: 2.4s;
+  animation: appear-text 0.0001s linear forwards;
+  -webkit-animation: appear-text 0.0001s linear forwards;
+  -moz-animation: appear-text 0.0001s linear forwards;
+  animation-delay: 2.6s;
 
 
 }
@@ -136,6 +139,7 @@ animation-delay: 2.4s;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
+  opacity: 0.6;
   border-radius: 50%;
   border: 1px solid rgba(255, 255, 255, 0.3);
   padding: 2em;
@@ -239,6 +243,55 @@ animation-delay: 2.4s;
   animation-delay: 2s;
 }
 
+.upper-block {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+
+}
+
+.upper-block::after {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #e5dcc5;
+  animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -webkit-animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -moz-animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 2.4s;
+}
+
+
+.block-bottom {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  height: 50vh;
+
+}
+
+.block-bottom::after {
+  content:"";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 100%;
+  background-color: #c4cdde;
+  animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -webkit-animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  -moz-animation: rev-block 1.5s cubic-bezier(0.19, 1, 0.22, 1) forwards;
+  animation-delay: 3s;
+}
+
+/* ----------------------------------------*/
+/* ---------ANIMATION KEYFRAMES------------*/
+/* ----------------------------------------*/
+
+/* ---------ANIMATE BLOCKS------------*/
 @keyframes rev-block {
 
      0% {
@@ -289,6 +342,9 @@ animation-delay: 2.4s;
      }
 
 }
+
+
+/* ---------TEXT APPEAR------------*/
 
 @keyframes appear-text {
 

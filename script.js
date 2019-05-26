@@ -91,4 +91,4 @@ TweenMax.from(".left-col", 2, {
            y: 20,
            opacity: 0,
            ease: Expo.easeInOut
-     })
+     }) /**/
